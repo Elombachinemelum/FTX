@@ -62,6 +62,7 @@ li a.deem-grey{
     list-style: none;
     padding: 0;
     text-align: left;
+    width: auto;
 }
 
 .center-align{
@@ -151,6 +152,7 @@ nav a{
     width: 500%;
     display: flex;
     cursor: pointer;
+    overflow-x: hidden;
 }
 
 #caurosel .hidden{
@@ -175,7 +177,7 @@ nav a{
 }
 .api-message{
     background-color: hsl(215, 15%, 27%);
-    max-width: 70%;
+    width: 70%;
     border-radius: .8rem;
     margin-inline: auto;
     display: flex;
@@ -185,8 +187,9 @@ nav a{
 }
 .api-message p a{
     color: #57CC99;
-    font-size: clamp(.8rem, 1.6vw, 2.5rem);
+    font-size: clamp(.7rem, 1.6vw, 2.5rem);
     text-decoration: none;
+    padding: 0;
 }
 
 .api-message p a:hover{
@@ -437,7 +440,7 @@ hr{
 @media (max-width: 40em) {
 
     .api-message{
-        max-width: 84%;
+        width: 90%;
         padding:3%;
     }
 
@@ -452,7 +455,7 @@ hr{
         row-gap: 1rem;
     }
     .stats{
-        width: 80%;
+        width: 90%;
     }
 
     #caurosel .hidden{
