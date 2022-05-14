@@ -1,0 +1,461 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: #1A132F;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+}
+
+:root{
+    font-size: 16px;
+    --white : 0, 0%, 100%;
+    --grey : hsl(207, 25%, 22%) ;
+    --deep-grey : hsl(97, 6%, 27%);
+    --api-message-col-1: hsl(207, 25%, 25%);
+    --home-color:hsl(255, 42%, 18%);
+    --stats-color-1:#506D84;
+}
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+/* *************utility***************** */
+.white{
+    color: hsl(var(--white));
+}
+
+.bg-white{
+    background-color: hsl(var(--white));
+}
+
+.deem-white,
+li a.link{
+    text-decoration: none;
+    color: 	hsl(var(--white) ,.8);
+}
+
+.grey{
+    color: hsl(270, 2%, 50%);
+}
+
+.deep-grey{
+    color: 	hsl(97, 6%, 27%);
+}
+
+.deem-grey{
+    color: hsl(270, 2%, 50%, .7);
+}
+
+.green{
+    color: #57CC99;
+}
+
+li a.deem-grey{
+    color: hsl(270, 2%, 50%, .7);
+}
+
+.flex{
+    display: flex;
+    gap : var(--gap, 0);
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.center-align{
+    text-align: center;
+}
+
+.footer-list{
+    font-size: clamp(.8rem, 1.1vw, 1.5rem);
+    text-align: left;
+}
+
+.center-align li{
+    padding-block: .3em
+}
+
+.list li{
+    cursor: pointer;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 35%;
+    margin: 0 auto;
+    background-color: hsl(215, 15%, 27%);
+    border-radius: .6rem;
+}
+
+.stat-span{
+    color: 	hsl(var(--white) ,.8);
+    font-size: clamp(.7rem, 1.2vw, 2.1rem);
+}
+
+.stat-p{
+    font-size: clamp(.8rem, 1.4vw, 2.3rem);
+}
+.stat-header{
+    padding: 0;
+    margin: 1.2em 0 0;
+    display: flex;
+    justify-content: center;
+    color: #57CC99;
+}
+
+.stats-breaker{
+    display: flex;
+    column-gap: var(--space-gap, 0);
+    justify-content: space-around;
+    padding: 1.5em 0;
+}
+
+.card{
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1.6em;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+/* *****************************navbar section******************************** */
+nav{
+    padding: .4rem;
+}
+
+nav img{
+    display: inline-block;
+    width: clamp(2.5rem, 4vw, 4.5rem);
+    aspect-ratio: 1;
+    background-color: transparent;
+    border-radius: 2px;
+    margin: 0 0 0 1rem;
+}
+
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    float: right;
+    margin: 0 4rem 0;
+    transform: translateY(40%);
+    font-size: clamp(.9rem, 1.2vw, 2.3rem);
+}
+
+
+/* *********************caurosel******************* */
+#caurosel{
+    width: 500%;
+    display: flex;
+    cursor: pointer;
+}
+
+#caurosel .hidden{
+    width: 0;
+    display: block;
+    height: 70vh;
+    float: left;
+    transition: width 700ms ease;
+}
+
+#caurosel .seen{
+    width: 20%;
+    transition: width 700ms ease;
+}
+/* ****************basics*************** */
+#basics{
+    padding: 10% 0 3%;
+}
+
+#api-call{
+    padding: 5% 0 10%;
+}
+.api-message{
+    background-color: hsl(215, 15%, 27%);
+    max-width: 70%;
+    border-radius: .8rem;
+    margin-inline: auto;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    padding: 3% 6%;
+}
+.api-message p a{
+    color: #57CC99;
+    font-size: clamp(.8rem, 1.6vw, 2.5rem);
+    text-decoration: none;
+}
+
+.api-message p a:hover{
+    color:	hsl(154, 53%, 80%);
+}
+
+/************************* tiles******************** */
+#tiles{
+    padding: 10% 15%;
+    background-color: hsl(255, 42%, 18%);
+}
+
+.tiles-tab{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(6rem, auto));
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.tiles-tab > div{
+    background-color: 	hsl(215, 15%, 27%);
+    border-radius: .4rem;
+    padding: .8em;
+    text-align: center;
+    cursor: pointer;
+    transform: scaleY(1);
+    transform: scaleX(1);
+    transition: transform 400ms ease;
+}
+
+.tiles-tab > div:hover{
+    background-image: linear-gradient(to top right, #3EDBF0, #E8F0F2);
+    transform: scale(1.04, 1.08);
+    transition: transform 400ms ease, background-image 400ms ease;
+    color: hsl(215, 15%, 30%);
+}
+
+.tiles-tab > div h3{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: clamp(.8rem, 1.8vw, 2.4rem);
+}
+
+.tiles-tab > div p{
+    font-size: clamp(.7rem, 1.2vw, 2.1rem);
+    line-height: 1.8;
+}
+
+/********************* phone images ********************* */
+
+#phone-image{
+    /* background-image: url('./images/app.dcb6c579.png'); */
+    /* background-size: cover; */
+    padding: 7% 5% 6%;
+    align-items: center;
+    justify-content: center;
+}
+
+#phone-image img{
+    display: block;
+    width: 45%;
+    aspect-ratio: 1;
+}
+
+#phone-image p{
+    font-size: clamp(1rem, 2.5vw, 3.5rem);
+    font-weight: bold;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.btn-support{
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    display: inline-block;
+    border: 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 1em 3em;
+    width: auto;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: white;
+    background-image: linear-gradient(to right, hsl(199, 52%, 63%), hsl(154, 53%, 57%));
+    transition:transform 400ms ease-in-out;
+    transform: scale(1);
+}
+
+.btn-support:hover{
+    background-image: linear-gradient(to left,	hsl(215, 79%, 31%), hsl(154, 53%, 57%) );
+    transition:transform 400ms ease-in-out;
+    transform: scale(1.1);
+}
+
+/* *******************footer section ************************* */
+
+.footer-rule{
+    width: 80%;
+    height: 2px;
+    border: none;
+    background-color: 	hsl(0, 0%, 97%, .25);
+}
+footer{
+    padding: 5% 12%;
+    background-color: 				hsl(255, 42%, 18%);
+}
+
+footer .footer-divider{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    column-gap: 5rem;
+    margin-inline : auto;
+}
+
+.footer-heading{
+    font-size:clamp(1rem, 2vw, 2.5rem);
+    letter-spacing: 1px;
+    padding: 0;
+    text-align: left;
+}
+
+/* ************************ABOUT PAGE ***************************/
+.about{
+    background-color: white;
+}
+
+#writeup{
+    background-color: #E4FBFF;
+    padding-block-end: 12% ;
+}
+
+.about-article{
+    padding: 5% 0;
+    text-align: center;
+}
+
+.about-article p{
+    line-height: 1.8;
+    font-size: clamp(.8rem, 1.6vw, 2.5rem);
+    max-width: 55ch;
+    margin-inline: auto;
+}
+
+.about-article h3{
+    font-size: clamp(.9rem, 1.8vw, 2.8rem);
+}
+
+.card img{
+    display: block;
+    width: 10rem;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.card p.deem-grey{
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
+    line-height: 1.6;
+}
+
+.card h3{
+    font-size: clamp(1.2rem, 2vw, 3rem);
+}
+
+.card span{
+    font-size: clamp(.9rem, 1.4vw, 2.4rem);
+}
+
+.team{
+    display: grid;
+    padding: 0 8%;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3%;
+    row-gap: 2%;
+}
+
+.contact-card{
+    text-align: center;
+    padding: 4% 0 6%;
+}
+
+hr{
+    width: 65%;
+    height: 2px;
+    background-color:hsl(97, 6%, 27%, .15) ;
+    border: none;
+    margin-bottom: 3rem;
+}
+
+.contact-card h3{
+    font-size: clamp(.9rem, 1.8vw, 2.8rem);
+}
+
+.contact-card p{
+    font-size: clamp(.8rem, 1.5vw, 2.5rem);
+}
+
+.contact-card a{
+    text-decoration: none;
+    color: #79B4B7;
+    font-size: clamp(.7rem, 1.6vw, 2.5rem);
+}
+
+/* responsiveness */
+@media (max-width: 60em) {
+    .tiles-tab{
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(4.5rem, auto);
+        column-gap: 4%;
+        row-gap: 1rem;
+    }
+    .stats{
+        width: 45%;
+    }
+
+    #caurosel .hidden{
+        height: 50vh;
+    }
+
+    .team{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1.5rem;
+    }
+
+    #phone-image{
+        flex-direction: column;
+    }
+
+    #phone-image > div{
+        text-align: center;
+    }
+
+    .footer-rule{
+        margin: 3rem auto;
+    }
+}
+@media (max-width: 50em) {
+    .stats{
+        width: 70%;
+    }
+
+    .team{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+@media (max-width: 40em) {
+
+    .api-message{
+        max-width: 84%;
+        padding:3%;
+    }
+
+    #tiles{
+        padding: 10% 8%;
+    }
+
+    .tiles-tab{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(4.5rem, auto);
+        column-gap: 5%;
+        row-gap: 1rem;
+    }
+    .stats{
+        width: 80%;
+    }
+
+    #caurosel .hidden{
+        height: 40vh;
+    }
+}
